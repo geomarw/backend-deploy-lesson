@@ -1,0 +1,72 @@
+@baseUrl = https://geomarb-backend-example.herokuapp.com/api/users
+@contentType = application/json
+@email = "geomar99988.bastiani@gmail.com"
+@password = "pwd12345"
+@name = "Geomar Tomás Cadore Bastiani"
+
+###
+POST {{ baseUrl }}
+Content-Type: {{ contentType }}
+origin: {{ baseURL }}
+
+{
+  "name": {{ name }},
+  "password": {{ password }},
+  "email": {{ email }},
+  "password": {{ password }},
+  "role":"user"
+}
+
+###
+PUT {{ baseUrl }}/32
+Content-Type: {{ contentType }}
+origin: {{ baseURL }}
+
+{
+  "password": "geo12345",
+  "role": "adm"
+}
+
+###
+PATCH  {{ baseUrl }}/23/password
+Content-Type: {{ c<ontentType }}
+origin: {{ baseURL }}
+
+{
+  "password":"12345678",
+  "newPassword": "geo12345"
+}
+
+###
+DELETE {{ baseUrl }}/23
+Content-Type: {{ contentType }}
+origin: {{ baseURL }}
+
+
+###
+GET {{ baseUrl }}/
+
+###
+GET {{ baseUrl }}/current
+
+###
+PUT {{ baseUrl }}/current
+Content-Type: {{ contentType }}
+origin: {{ baseURL }}
+
+{
+  "name": "new name"
+}
+
+### 
+PATCH  {{ baseUrl }}/current/password
+Content-Type: {{ contentType }}
+origin: {{ baseURL }}
+
+{
+  "password":"geo12345",
+  "newPassword": "geo123456"
+}
+
+###
+GET {{ baseUrl }}/8

@@ -1,0 +1,33 @@
+@baseUrl = http://localhost:5000/auth
+@contentType = application/json
+@email = "xgeomar.bastiani@gmail.com"
+@password = "geo12345"
+@name = "Geomar Tomás Cadore Bastiani"
+
+###
+POST {{ baseUrl }}/register
+Content-Type: {{ contentType }}
+origin: {{ baseURL }}
+
+{
+  "name": {{ name }},
+  "password": {{ password }},
+  "email": {{ email }},
+  "password": {{ password }},
+  "role":"adm"
+}
+
+###
+POST {{ baseUrl }}/login
+Content-Type: {{ contentType }}
+origin: {{ baseURL }}
+
+{
+  "email": {{ email }},
+  "password": {{ password }}
+}
+
+###
+GET  {{ baseUrl }}/logout
+Content-Type: {{ contentType }}
+origin: {{ baseURL }}
